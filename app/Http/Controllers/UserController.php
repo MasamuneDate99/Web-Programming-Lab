@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-Use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -40,10 +41,20 @@ class UserController extends Controller
     }
 
     public function registerVerification(Request $req){
-        $credentials = [
-            'name' => $req->name,
-            'address' => $req->address,
-            'email'
+        $rules = [
+            'name' => 'required|min:5',
+            'gender' => 'required',
+            'address' => 'required|min:10',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6',
+            'confirmPassword' => 'required|same:password',
+            'agreement' => 'required'
         ];
+        
+        $validation = Validator::make($req->all(), $rules);
+
+        if($validation->fails()){
+            return back()->withErrors([$validation], 'insert');
+        }
     }
 }
