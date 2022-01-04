@@ -40,15 +40,19 @@
                         <div class="col-10">
                             <button type="button" class="btn btn-outline-light">Home</button>
                         </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-outline-light">Login</button>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-outline-light">Register</button>
-                        </div>
+                        @auth
+                            @if (Auth::user()->role == 'member')
+                            <button type="button" class="btn btn-outline-light">Logout</button>
+                        @endauth
+                            @else     
+                            <div class="col">
+                                <button type="button" class="btn btn-outline-light">Login</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-outline-light">Register</button>
+                            </div>
+                            @endif
                     </div>
-                {{-- @if ()
-                @endif --}}
                 @yield('body')
             </body>
 
@@ -57,7 +61,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p>© All Rights Reserved by Yes</p>
+                    <p>© 2021 Copyright DY20-1</p>
                 </div>
             </div>
         </div>
