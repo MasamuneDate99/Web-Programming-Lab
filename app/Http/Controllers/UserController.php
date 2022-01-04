@@ -38,4 +38,12 @@ class UserController extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
+    public function registerVerification(Request $req){
+        $credentials = [
+            'name' => $req->name,
+            'address' => $req->address,
+            'email'
+        ];
+    }
 }
