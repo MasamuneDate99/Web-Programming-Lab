@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/layoutStyle.css">
+    @yield('Style')
 </head>
 <body>
     
@@ -35,10 +36,11 @@
 
 
             <body> 
-                {{-- ini guest --}}
                     <div class="container-fluid d-flex bg-primary">
                         <div class="col-10">
-                            <button type="button" class="btn btn-outline-light">Home</button>
+                            <form action="/home">
+                                <button type="submit" class="btn btn-outline-light">Home</button>
+                            </form>
                         </div>
                         @auth
                             @if (Auth::user()->role == 'member')
@@ -46,10 +48,14 @@
                         @endauth
                             @else     
                             <div class="col">
-                                <button type="button" class="btn btn-outline-light">Login</button>
+                                <form action="/login">
+                                    <button type="submit" class="btn btn-outline-light">Login</button>
+                                </form>
                             </div>
                             <div class="col">
-                                <button type="button" class="btn btn-outline-light">Register</button>
+                                <form action="/register">
+                                    <button type="submit" class="btn btn-outline-light" value="register">Register</a></button>
+                                </form>
                             </div>
                             @endif
                     </div>

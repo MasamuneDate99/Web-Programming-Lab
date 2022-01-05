@@ -1,5 +1,11 @@
 @extends('Master.layout')
 
+
+{{-- @section('Style')
+    
+@endsection --}}
+
+
 @section('body')
     <div class="d-flex justify-content-center ">
         <form action="/login">      
