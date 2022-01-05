@@ -33,8 +33,6 @@
             </div>
         </div>
 </header>
-
-
             <body> 
                     <div class="container-fluid d-flex bg-primary">
                         <div class="col-10">
@@ -61,17 +59,18 @@
                     </div>
                 @yield('body')
             </body>
-
-<footer>
-    <div class=" kilimanjaro_bottom_header_one section_padding_50 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p>© 2021 Copyright DY20-1</p>
+    <footer>
+        <div class=" kilimanjaro_bottom_header_one section_padding_50 text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p>© 2021 Copyright DY20-1</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
+
+
 </html>
