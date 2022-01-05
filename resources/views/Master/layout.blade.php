@@ -48,7 +48,7 @@
                         @endauth
                             @else     
                             <div class="col">
-                                <form action="/login">
+                                <form action="/loginPage">
                                     <button type="submit" class="btn btn-outline-light">Login</button>
                                 </form>
                             </div>

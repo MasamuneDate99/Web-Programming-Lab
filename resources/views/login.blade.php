@@ -1,13 +1,9 @@
 @extends('Master.layout')
 
 
-{{-- @section('Style')
-    
-@endsection --}}
-
 
 @section('body')
-    <div class="d-flex justify-content-center ">
+    <div class="d-flex justify-content-center">
         <form action="/login">      
             <h1> Welcome Back Cunt</h1>
         <input type="email" name="email" placeholder="email">
