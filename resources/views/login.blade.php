@@ -1,5 +1,7 @@
 @extends('Master.layout')
 
+
+
 @section('body')
     <div class="d-flex justify-content-center ">
         <form action="/loginVerif">      
