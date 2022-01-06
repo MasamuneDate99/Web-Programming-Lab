@@ -27,6 +27,7 @@ class UserController extends Controller
     
         if (Auth::attempt($credentials, true)) {
             Session::put('credential', $credentials);
+            // Return redirect ke "Home" page nantinya
             return redirect()->intended('home');
         }
     

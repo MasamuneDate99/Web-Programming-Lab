@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="d-flex justify-content-center ">
-        <form action="/login">      
+        <form action="/loginVerif">      
             <h1> Welcome Back Cunt</h1>
         <input type="email" name="email" placeholder="email">
         <br>

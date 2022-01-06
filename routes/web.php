@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [UserController::class, 'loginPage']);
+
+Route::post('/loginVerif', [UserController::class, 'loginVerification']);
