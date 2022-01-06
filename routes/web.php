@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/register' , function(){
-    return view('register');
-});
-Route::get('/loginPage' , function(){
-    return view('login');
-});
 
 Route::get('/login', [UserController::class, 'loginPage']);
+
+Route::get('/register', [UserController::class, 'registerPage']);
+
+Route::post('/loginVerif', [UserController::class, 'loginVerification']);
+
+Route::post('/registerVerif', [UserController::class, 'registerVerification']);

@@ -14,6 +14,10 @@ class UserController extends Controller
         return view('login');
     }
 
+    public function registerPage(){
+        return view('register');
+    }
+
     public function loginVerification(Request $req){
         $credentials = [
             'email' => $req->email,

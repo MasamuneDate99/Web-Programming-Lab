@@ -4,7 +4,7 @@
 
 @section('body')
     <div class="d-flex justify-content-center">
-        <form action="/register" >
+        <form action="/registerVerif" >
             <h1>Join With Us</h1>
             <input type="text" name="fullName" placeholder="Full Name">
             <p>Gender</p>

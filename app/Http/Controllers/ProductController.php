@@ -21,5 +21,8 @@ class ProductController extends Controller
         if($validation->fails()){
             return back()->withErrors([$validation], 'insert');
         }
+        else{
+            return redirect()->intended('login');
+        }
     }
 }
