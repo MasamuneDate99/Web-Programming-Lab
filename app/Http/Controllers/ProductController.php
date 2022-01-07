@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
@@ -22,7 +24,28 @@ class ProductController extends Controller
             return back()->withErrors([$validation], 'insert');
         }
         else{
-            return redirect()->intended('login');
+            return redirect()->intended('registerProduct');
         }
+
+        $file = $req->file('image');
+        $imageName = time().'.'.$file->getClientOriginalExtension();
+
+        Storage::putFileAs('public/images', $file, $imageName);
+        $imageName = 'images/'.$imageName;
+
+        $product = new Products();
+        $product->productName = $req->productName;
+        $product->description = $req->productDesc;
+        $product->price = $req->productPrice;
+        $product->category = $req->productCategory;
+        $product->image = $req->$imageName;
+
+        $product->save();
+    }
+
+    public function showProduct(){
+        $products = Products::all();
+        
+        return view('test', ['products' => $products]);
     }
 }

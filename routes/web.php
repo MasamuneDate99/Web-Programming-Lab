@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +27,7 @@ Route::get('/register', [UserController::class, 'registerPage']);
 Route::post('/loginVerif', [UserController::class, 'loginVerification']);
 
 Route::post('/registerVerif', [UserController::class, 'registerVerification']);
+
+Route::post('/addNewProduct', [ProductController::class, 'productVerification']);
+
+Route::post('/addNewCategory', [CategoryController::class, 'addCategory']);

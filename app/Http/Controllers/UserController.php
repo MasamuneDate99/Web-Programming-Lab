@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -61,5 +62,15 @@ class UserController extends Controller
         if($validation->fails()){
             return back()->withErrors([$validation], 'insert');
         }
+
+        $user = new User();
+        $user->name = $req->fullName;
+        $user->gender = $req->gender;
+        $user->address = $req->address;
+        $user->email = $req->email;
+        $user->password = $req->password;
+
+        $user->save();
+        return redirect()->intended('login');
     }
 }
