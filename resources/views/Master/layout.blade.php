@@ -45,15 +45,13 @@
                                     @if (Auth::user()->role == 'member')
                                         <button type="submit" class="btn btn-outline-light">My Cart</button>
                                         <button type="submit" class="btn btn-outline-light">History Transaction</button>   
+                                    @endif
                                     @if (Auth::user()->role == 'admin')
-                                    {{-- ini harusnya tombol buat role admin doang
-                                    tapi ga work ga tau knp, harusnya ada dropdownnya , dropdownnya blm gw isi karena auth 
-                                    rolenya gagal    
-                                    --}}
                                         <button type="submit" class="btn btn-outline-light">Admin</button>
+                                        {{-- dropdown --}}
                                         <button type="submit" class="btn btn-outline-light">Admin</button>       
-                                        @endif
-                                @endif
+                                        {{-- dropdown --}}
+                                    @endif
                                 @endauth
                             </div>
                         </div>

@@ -4,10 +4,11 @@
 
 @section('body')
     <div class="d-flex justify-content-center">
-        <form action="/registerVerif" method="POST">
+        <form action="/registerVerif" method="POST" enctype="multipart/form-data">
+            @csrf
             <h1>Join With Us</h1>
             <br>
-            <input type="text" name="fullName" placeholder="Full Name">
+            <input type="text" name="name" placeholder="Full Name">
             <div>
                 Gender
                 <br>
@@ -20,14 +21,9 @@
             <br>
             <input type="password" name="password" placeholder="Password" id="">
             <br>
-            <input type="password" name="password2nd" placeholder="Confirm Password">
-            {{-- @if ('password' != 'password2nd')
-                <span style="color: red">
-                    {{$errors->first( )}}
-                </span>
-            @endif --}}
+            <input type="password" name="confirmPassword" placeholder="Confirm Password">
             <br>
-            <input type="checkbox" name="termsandconditions" id=""> I agree with terms & conditions
+            <input type="checkbox" name="agreement" id=""> I agree with terms & conditions
             <br>
             <input type="submit" value="Register Now">
             {{-- Masih Error ga bisa pencet tombol Register Now --}}

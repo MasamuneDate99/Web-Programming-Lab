@@ -71,6 +71,6 @@ class UserController extends Controller
         $user->password = $req->password;
 
         $user->save();
-        return redirect()->intended('login');
+        return redirect()->intended('home');
     }
 }
