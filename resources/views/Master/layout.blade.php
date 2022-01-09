@@ -43,9 +43,13 @@
                             <div class="col d-flex">
                                 @auth
                                     @if (Auth::user()->role == 'member')
-                                @endauth 
-                                    <button type="submit" class="btn btn-outline-light">My Cart</button>
-                                    <button type="submit" class="btn btn-outline-light">History Transaction</button>   
+                                        <button type="submit" class="btn btn-outline-light">My Cart</button>
+                                        <button type="submit" class="btn btn-outline-light">History Transaction</button>   
+                                    @if (Auth::user()->role == 'admin')
+                                        <button type="submit" class="btn btn-outline-light">Admin</button>
+                                        <button type="submit" class="btn btn-outline-light">Admin</button>       
+                                @endauth
+                                        @endif
                                 @endif
                             </div>
                         </div>
