@@ -26,8 +26,11 @@
             <input type="checkbox" name="agreement" id=""> I agree with terms & conditions
             <br>
             <input type="submit" value="Register Now">
-            {{-- Masih Error ga bisa pencet tombol Register Now --}}
+            @if ($errors->any())
+            <h3 style="color: red">{{$errors->first()}}</h3>
+        @endif
         </form>
+        
     </div>
 
 @endsection

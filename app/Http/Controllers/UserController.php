@@ -60,17 +60,17 @@ class UserController extends Controller
         $validation = Validator::make($req->all(), $rules);
 
         if($validation->fails()){
-            return back()->withErrors([$validation], 'insert');
+            return back()->withErrors($validation, 'insert Error');
         }
 
         $user = new User();
-        $user->name = $req->fullName;
+        $user->name = $req->name;
         $user->gender = $req->gender;
         $user->address = $req->address;
         $user->email = $req->email;
-        $user->password = $req->password;
+        $user->password = bcrypt($request->password);
 
         $user->save();
-        return redirect()->intended('home');
+        return redirect()->intended('login');
     }
 }
