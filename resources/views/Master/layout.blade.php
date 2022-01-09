@@ -52,9 +52,9 @@
                                     --}}
                                         <button type="submit" class="btn btn-outline-light">Admin</button>
                                         <button type="submit" class="btn btn-outline-light">Admin</button>       
-                                @endauth
                                         @endif
                                 @endif
+                                @endauth
                             </div>
                         </div>
 
@@ -82,7 +82,7 @@
                     </div>
                 @yield('body')
             </body>
-    {{-- <footer>
+    <footer>
         <div class=" kilimanjaro_bottom_header_one section_padding_50 text-center">
             <div class="container">
                 <div class="row">
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-    </footer> --}}
+    </footer>
 </body>
 
 

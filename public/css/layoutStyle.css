@@ -4,7 +4,7 @@ footer{
     text-align: center;
     font-size: 20px;
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
 }
 

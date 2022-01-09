@@ -4,13 +4,16 @@
 
 @section('body')
     <div class="d-flex justify-content-center">
-        <form action="/registerVerif" >
+        <form action="/registerVerif" method="POST">
             <h1>Join With Us</h1>
-            <input type="text" name="fullName" placeholder="Full Name">
-            <p>Gender</p>
-            <input type="radio" name="gender" id="male"> Male
-            <input type="radio" name="gender" id="female"> Female
             <br>
+            <input type="text" name="fullName" placeholder="Full Name">
+            <div>
+                Gender
+                <br>
+                <input type="radio" name="gender" id="male"> Male
+                <input type="radio" name="gender" id="female"> Female
+            </div>
             <textarea name="address" cols="50" rows="2" placeholder="Address"></textarea>
             <br>
             <input type="text" name="email" placeholder="Email">
