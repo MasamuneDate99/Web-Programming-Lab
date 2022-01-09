@@ -34,28 +34,43 @@
         </div>
 </header>
             <body> 
-                    <div class="container-fluid d-flex bg-primary">
-                        <div class="col-10">
-                            <form action="/home">
-                                <button type="submit" class="btn btn-outline-light">Home</button>
+                    <div class="container-fluid bg-primary">
+                    <div class="row">
+                        <div class="col-10 d-flex">
+                            <form action="/">
+                                 <button type="submit" class="btn btn-outline-light">Home</button>
                             </form>
+                            <div class="col d-flex">
+                                @auth
+                                    @if (Auth::user()->role == 'member')
+                                @endauth 
+                                    <button type="submit" class="btn btn-outline-light">My Cart</button>
+                                    <button type="submit" class="btn btn-outline-light">History Transaction</button>   
+                                @endif
+                            </div>
                         </div>
-                        @auth
-                            @if (Auth::user()->role == 'member')
-                            <button type="button" class="btn btn-outline-light">Logout</button>
-                        @endauth
-                            @else     
-                            <div class="col">
-                                <form action="/loginPage">
-                                    <button type="submit" class="btn btn-outline-light">Login</button>
+
+                        <div class="col-sm d-flex">
+                                @auth
+                                    @if (Auth::user()->role == 'member')
+                                @endauth
+                                <form action="/logout">
+                                <button type="submit" class="btn btn-outline-light">Logout</button>
                                 </form>
-                            </div>
-                            <div class="col">
-                                <form action="/register">
-                                    <button type="submit" class="btn btn-outline-light" value="register">Register</a></button>
-                                </form>
-                            </div>
-                            @endif
+                                    @else     
+                                <div class="col">
+                                    <form action="/loginPage">
+                                        <button type="submit" class="btn btn-outline-light">Login</button>
+                                    </form>
+                                </div>
+                                <div class="col">
+                                    <form action="/register">
+                                        <button type="submit" class="btn btn-outline-light" value="register">Register</a></button>
+                                    </form>
+                                </div>
+                                @endif
+                        </div>
+                    </div>
                     </div>
                 @yield('body')
             </body>

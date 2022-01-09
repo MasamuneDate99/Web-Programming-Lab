@@ -43,7 +43,7 @@ class UserController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect('/login');
+        return redirect('/home');
     }
 
     public function registerVerification(Request $req){
