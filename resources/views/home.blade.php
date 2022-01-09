@@ -1,7 +1,21 @@
 @extends('Master.layout')
 
 @section('body')
-    <h1>Home test 123</h1>
+
+<div>
+
+
+    <div>
+        <h1>New Product</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        Konten
+    </div>
+    <div>
+        Page 1 2 3 4
+    </div>
+
+</div>
 
     @auth
         <h1>Sup ! {{Auth::user()->name}}</h1>

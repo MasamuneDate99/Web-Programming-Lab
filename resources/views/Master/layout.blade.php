@@ -46,6 +46,10 @@
                                         <button type="submit" class="btn btn-outline-light">My Cart</button>
                                         <button type="submit" class="btn btn-outline-light">History Transaction</button>   
                                     @if (Auth::user()->role == 'admin')
+                                    {{-- ini harusnya tombol buat role admin doang
+                                    tapi ga work ga tau knp, harusnya ada dropdownnya , dropdownnya blm gw isi karena auth 
+                                    rolenya gagal    
+                                    --}}
                                         <button type="submit" class="btn btn-outline-light">Admin</button>
                                         <button type="submit" class="btn btn-outline-light">Admin</button>       
                                 @endauth
@@ -78,7 +82,7 @@
                     </div>
                 @yield('body')
             </body>
-    <footer>
+    {{-- <footer>
         <div class=" kilimanjaro_bottom_header_one section_padding_50 text-center">
             <div class="container">
                 <div class="row">
@@ -88,7 +92,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> --}}
 </body>
 
 

@@ -27,6 +27,7 @@
             <input type="checkbox" name="termsandconditions" id=""> I agree with terms & conditions
             <br>
             <input type="submit" value="Register Now">
+            {{-- Masih Error ga bisa pencet tombol Register Now --}}
         </form>
     </div>
 
