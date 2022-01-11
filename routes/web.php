@@ -31,6 +31,12 @@ Route::get('/register', function () {
 Route::get('/detailProduct', function () {
     return view('detailProduct');
 });
+Route::get('/addCategory', function () {
+    return view('addCategory');
+});
+Route::get('/myCart', function () {
+    return view('myCart');
+});
 
 Route::get('/login', [UserController::class, 'loginPage']);
 

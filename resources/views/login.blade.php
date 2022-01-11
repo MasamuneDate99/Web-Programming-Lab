@@ -21,6 +21,5 @@
         <br>
         <input type="submit" value="login">
         </form>      
-        
     </div>
 @endsection

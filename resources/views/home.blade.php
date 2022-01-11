@@ -5,7 +5,7 @@
 <div>
 
 
-    <div>
+    <div style="text-align: center">
         <h1>New Product</h1>
     </div>
     <div class="d-flex justify-content-center">
@@ -64,7 +64,16 @@
         </div>
     </div>
     <div>
-        Page 1 2 3 4
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary"><<</button>
+              <button type="button" class="btn btn-secondary">1</button>
+              <button type="button" class="btn btn-secondary">2</button>
+              <button type="button" class="btn btn-secondary">3</button>
+              <button type="button" class="btn btn-secondary">4</button>
+              <button type="button" class="btn btn-secondary">>></button>
+            </div>
+        </div>
     </div>
 
 </div>

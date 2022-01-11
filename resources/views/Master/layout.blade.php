@@ -37,17 +37,25 @@
                             <div class="col d-flex">
                                 @auth
                                     @if (Auth::user()->role == 'member')
+                                    <form action="/myCart">
                                         <button type="submit" class="btn btn-primary">My Cart</button>
+                                    </form>
+                                    <form action="/historyTransaction">
                                         <button type="submit" class="btn btn-primary">History Transaction</button>   
+                                    </form>
                                     @endif
                                     @if (Auth::user()->role == 'admin')
                                     <div class="dropdown">
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Manage Product
                                         </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                          <button class="dropdown-item" type="button">View Product</button>
-                                          <button class="dropdown-item" type="button">Add Product</button>
+                                        <div class="dropdown-content" aria-labelledby="dropdownMenu2">
+                                            <form action="/viewProduct">
+                                                <button class="dropdown-item" type="submit">View Product</button>
+                                            </form>
+                                            <form action="/addProduct">
+                                                <button class="dropdown-item" type="submit">Add Product</button>
+                                            </form>
                                         </div>
                                       </div> 
                                         {{-- dropdown --}}
@@ -55,9 +63,13 @@
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Manage Category
                                         </button>
-                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button">View Category</button>
-                                            <button class="dropdown-item" type="button">Add Category</button>
+                                         <div class="dropdown-content">
+                                            <form action="/viewCategory">
+                                                <button class="dropdown-item" type="submit">View Category</button>
+                                            </form>
+                                            <form action="/addCategory">
+                                                <button class="dropdown-item" type="submit">Add Category</button>
+                                            </form>
                                         </div>
                                     </div>
                                     @endif
@@ -90,7 +102,7 @@
                 @yield('body')
             </body>
     <footer>
-        <div class=" kilimanjaro_bottom_header_one section_padding_50 text-center">
+        <div class="section_padding_50 text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

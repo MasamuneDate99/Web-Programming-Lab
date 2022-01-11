@@ -1,5 +1,8 @@
 @extends('Master.layout')
 
 @section('body')
-    disini sini isi detail product yang di pilih ama user
+    Detail Product
+
+    
+    {{-- input barangny blm ada.. gw ga bsa masukin codeny --}}
 @endsection
