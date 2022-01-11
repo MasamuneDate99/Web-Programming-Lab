@@ -12,12 +12,6 @@
 <body>
     
 <header>
-        {{-- <img src="{{asset('imgs/logo1.png') }}" width="" height="">
-        <form action="/search">
-            <input type="search" name="search" placeholder="Search Product Here">        
-            <input type="submit" value="search">
-        </form> --}}
-
         <div class="container-fluid bg-warning d-flex">
             <div class="col">
                 <img src="{{ asset('imgs/logo1.png') }}" alt="">
@@ -38,19 +32,34 @@
                     <div class="row">
                         <div class="col-10 d-flex">
                             <form action="/">
-                                 <button type="submit" class="btn btn-outline-light">Home</button>
+                                 <button type="submit" class="btn btn-primary">Home</button>
                             </form>
                             <div class="col d-flex">
                                 @auth
                                     @if (Auth::user()->role == 'member')
-                                        <button type="submit" class="btn btn-outline-light">My Cart</button>
-                                        <button type="submit" class="btn btn-outline-light">History Transaction</button>   
+                                        <button type="submit" class="btn btn-primary">My Cart</button>
+                                        <button type="submit" class="btn btn-primary">History Transaction</button>   
                                     @endif
                                     @if (Auth::user()->role == 'admin')
-                                        <button type="submit" class="btn btn-outline-light">Admin</button>
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Manage Product
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                          <button class="dropdown-item" type="button">View Product</button>
+                                          <button class="dropdown-item" type="button">Add Product</button>
+                                        </div>
+                                      </div> 
                                         {{-- dropdown --}}
-                                        <button type="submit" class="btn btn-outline-light">Admin</button>       
-                                        {{-- dropdown --}}
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Manage Category
+                                        </button>
+                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <button class="dropdown-item" type="button">View Category</button>
+                                            <button class="dropdown-item" type="button">Add Category</button>
+                                        </div>
+                                    </div>
                                     @endif
                                 @endauth
                             </div>
@@ -61,17 +70,17 @@
                                     @if (Auth::user()->role == 'member')
                                 @endauth
                                 <form action="/logout">
-                                <button type="submit" class="btn btn-outline-light">Logout</button>
+                                <button type="submit" class="btn btn-primary">Logout</button>
                                 </form>
                                     @else     
                                 <div class="col">
                                     <form action="/loginPage">
-                                        <button type="submit" class="btn btn-outline-light">Login</button>
+                                        <button type="submit" class="btn btn-primary">Login</button>
                                     </form>
                                 </div>
                                 <div class="col">
                                     <form action="/register">
-                                        <button type="submit" class="btn btn-outline-light" value="register">Register</a></button>
+                                        <button type="submit" class="btn btn-primary" value="register">Register</a></button>
                                     </form>
                                 </div>
                                 @endif
