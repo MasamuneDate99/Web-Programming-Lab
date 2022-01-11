@@ -25,4 +25,8 @@ class CategoryController extends Controller
         
         return redirect()->intended('addCategory');
     }
+
+    public function editExistingCategory(Request $req){
+        
+    }
 }
