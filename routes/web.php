@@ -42,6 +42,6 @@ Route::post('/loginVerif', [UserController::class, 'loginVerification']);
 
 Route::post('/registerVerif', [UserController::class, 'registerVerification']);
 
-Route::post('/addNewProduct', [ProductController::class, 'productVerification']);
+Route::post('/addNewProduct', [ProductController::class, 'productVerification'])->middleware('admin');
 
-Route::post('/addNewCategory', [CategoryController::class, 'addCategory']);
+Route::post('/addNewCategory', [CategoryController::class, 'addCategory'])->middleware('admin');

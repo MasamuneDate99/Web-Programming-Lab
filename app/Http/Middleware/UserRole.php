@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminRole
+class UserRole
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,8 @@ class AdminRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::check() || Auth::user()->role !='admin'){
-            return abort(response('Unauthorized Admin Access', 401) );
+        if(!Auth::check() || Auth::user()->role !='member'){
+            return abort(response('Only regular user that can access this menu', 401) );
         }
         return $next($request);
     }
