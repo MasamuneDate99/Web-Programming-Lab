@@ -24,7 +24,7 @@
             </div>
             <div class="col-lg-10">
                 @csrf
-                <form action="/search">
+                <form action="/searchProduct">
                     <input type="text" name="search" placeholder="Search product..." class="p-2 my-2 w-100">
             </div>
             <div class="col">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -46,6 +47,14 @@ class ProductController extends Controller
     public function showProduct(){
         $products = Products::all();
         
+        return view('test', ['products' => $products]);
+    }
+
+    public function searchItem(Request $req){
+        $keyword = null;
+        $keyword = $req->$keyword;
+        $products = DB::table('products')->where('name', 'like', "&".$keyword."&")->paginate();
+
         return view('test', ['products' => $products]);
     }
 }
