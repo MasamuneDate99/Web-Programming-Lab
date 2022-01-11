@@ -21,7 +21,7 @@ class ProductController extends Controller
         $validation = Validator::make($req->all(), $rules);
 
         if($validation->fails()){
-            return back()->withErrors([$validation], 'insert');
+            return back()->withErrors($validation, 'insert');
         }
         else{
             return redirect()->intended('registerProduct');

@@ -16,7 +16,7 @@ class CategoryController extends Controller
         $validation = Validator::make($req->all(), $rules);
 
         if($validation->fails()){
-            return back()->withErrors([$validation], 'insert');
+            return back()->withErrors($validation, 'insert');
         }
         
         $productCategory = new Category();

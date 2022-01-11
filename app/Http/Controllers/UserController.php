@@ -68,7 +68,7 @@ class UserController extends Controller
         $user->gender = $req->gender;
         $user->address = $req->address;
         $user->email = $req->email;
-        $user->password = bcrypt($request->password);
+        $user->password = bcrypt($req->password);
 
         $user->save();
         return redirect()->intended('login');
