@@ -18,7 +18,7 @@ class UserRole
     public function handle(Request $request, Closure $next)
     {
         if(!Auth::check() || Auth::user()->role !='member'){
-            return abort(response('Only regular user that can access this menu', 401) );
+            return abort(401);
         }
         return $next($request);
     }
