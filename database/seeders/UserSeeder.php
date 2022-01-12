@@ -39,22 +39,22 @@ class UserSeeder extends Seeder
             'password' => Hash::make('123123'),
         ]);
         
-        DB::table('products_category')->insert([
+        DB::table('category')->insert([
             'name' => 'Laptop',
         ]);
-        DB::table('products_category')->insert([
+        DB::table('category')->insert([
             'name' => 'Smartphone',
         ]);
-        DB::table('products_category')->insert([
+        DB::table('category')->insert([
             'name' => 'Tevelision',
         ]);
-        DB::table('products_category')->insert([
+        DB::table('category')->insert([
             'name' => 'Cooking Gadget',
         ]);
-        DB::table('products_category')->insert([
+        DB::table('category')->insert([
             'name' => 'Accesories',
         ]);
-        DB::table('products_category')->insert([
+        DB::table('category')->insert([
             'name' => 'Tools',
         ]);
     }
