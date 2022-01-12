@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <h1>Input page ( tar gua pasang middlewarenya )</h1>
+        <h1>Add New Product</h1>
         <form action="/addNewProduct" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="productName" id="name" placeholder="Product Name">
