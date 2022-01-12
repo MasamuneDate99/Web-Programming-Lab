@@ -38,6 +38,10 @@ Route::get('/myCart', function () {
     return view('myCart');
 });
 
+Route::get('/addProduct', function(){
+    return view('registerProduct');
+});
+
 Route::get('/login', [UserController::class, 'loginPage']);
 
 Route::get('/logout', [UserController::class, 'logout']);
