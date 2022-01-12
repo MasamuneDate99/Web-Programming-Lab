@@ -12,8 +12,8 @@
             <div>
                 Gender
                 <br>
-                <input type="radio" name="gender" id="male"> Male
-                <input type="radio" name="gender" id="female"> Female
+                <input type="radio" name="gender" id="male" value="male"> Male
+                <input type="radio" name="gender" id="female" value="female"> Female
             </div>
             <textarea name="address" cols="50" rows="2" placeholder="Address"></textarea>
             <br>
