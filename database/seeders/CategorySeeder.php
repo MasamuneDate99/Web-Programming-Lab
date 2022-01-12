@@ -15,22 +15,22 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('products_category')->insert([
-            'category' => 'Laptop',
+            'name' => 'Laptop',
         ]);
         DB::table('products_category')->insert([
-            'category' => 'Smartphone',
+            'name' => 'Smartphone',
         ]);
         DB::table('products_category')->insert([
-            'category' => 'Tevelision',
+            'name' => 'Tevelision',
         ]);
         DB::table('products_category')->insert([
-            'category' => 'Cooking Gadget',
+            'name' => 'Cooking Gadget',
         ]);
         DB::table('products_category')->insert([
-            'category' => 'Accesories',
+            'name' => 'Accesories',
         ]);
         DB::table('products_category')->insert([
-            'category' => 'Tools',
+            'name' => 'Tools',
         ]);
     }
 }
