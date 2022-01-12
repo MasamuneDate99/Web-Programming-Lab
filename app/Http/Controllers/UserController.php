@@ -56,14 +56,11 @@ class UserController extends Controller
             'confirmPassword' => 'required|same:password',
             'agreement' => 'required'
         ];
-        $validation = null;
         $validation = Validator::make($req->all(), $rules);
 
         if($validation->fails()){
             return back()->withErrors($validation, 'insert Error');
         }
-
-        $user = null;
         $user = new User();
         $user->name = $req->name;
         $user->gender = $req->gender;
