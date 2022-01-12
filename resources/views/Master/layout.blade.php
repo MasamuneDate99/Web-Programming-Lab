@@ -53,7 +53,7 @@
                                             <form action="/viewProduct">
                                                 <button class="dropdown-item" type="submit">View Product</button>
                                             </form>
-                                            <form action="/addProduct">
+                                            <form action="/addNewProduct">
                                                 <button class="dropdown-item" type="submit">Add Product</button>
                                             </form>
                                         </div>
