@@ -38,5 +38,24 @@ class UserSeeder extends Seeder
             'email' => 'test@gmail.com',
             'password' => Hash::make('123123'),
         ]);
+        
+        DB::table('products_category')->insert([
+            'name' => 'Laptop',
+        ]);
+        DB::table('products_category')->insert([
+            'name' => 'Smartphone',
+        ]);
+        DB::table('products_category')->insert([
+            'name' => 'Tevelision',
+        ]);
+        DB::table('products_category')->insert([
+            'name' => 'Cooking Gadget',
+        ]);
+        DB::table('products_category')->insert([
+            'name' => 'Accesories',
+        ]);
+        DB::table('products_category')->insert([
+            'name' => 'Tools',
+        ]);
     }
 }
